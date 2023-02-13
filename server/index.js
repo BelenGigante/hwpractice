@@ -26,7 +26,11 @@ io.on('connection', (socket) => {
         socket.join(data);
         console.log(`user: ${socket.id} entered chat with: ${data} `)
     });
-    socket.on('')
+//creates send message event with the data from Chat.js
+    socket.on('sendTextMessage', (data) => {
+        console.log(data);
+    });
+
     socket.on('disconnect', () => {
         console.log(`user offline: ${socket.id}`)
     });
