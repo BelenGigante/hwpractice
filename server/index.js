@@ -24,7 +24,7 @@ io.on('connection', (socket) => {
     //it recognizes the data i want to pass from the front end
     socket.on('joinChatSpace', (data) => {
         socket.join(data);
-        console.log(`user: ${socket.id} entered chat with: ${data} `)
+        console.log(`user ${socket.id} entered ${data} `);
     });
 //creates send message event with the data from Chat.js
     socket.on('sendTextMessage', (data) => {
@@ -32,7 +32,7 @@ io.on('connection', (socket) => {
     });
 
     socket.on('disconnect', () => {
-        console.log(`user offline: ${socket.id}`)
+        console.log(`user offline: ${socket.id}`);
     });
 });
 server.listen(3001, () => {
